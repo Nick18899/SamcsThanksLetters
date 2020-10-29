@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+done_letters/
+
+.idea/
+
+done_diploms/
