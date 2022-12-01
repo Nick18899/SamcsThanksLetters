@@ -8,6 +8,7 @@ font_reg_name = 'IBMPlexSans-Light'  # Название шрифта
 
 y_coordinate = 585  # y координата начала текста. Подбирается методом тыка :)
 
+letter_blank = 'letter_templates/letter_blank.pdf'
 pob_blank = 'letter_templates/diplom_pob_blank.pdf'
 priz_blank = 'letter_templates/diplom_priz_blank.pdf'
 pob_example = 'letter_templates/diplom_pob_example.pdf'

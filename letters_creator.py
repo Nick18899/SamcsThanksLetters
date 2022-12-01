@@ -7,7 +7,7 @@ from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.pdfbase.pdfmetrics import stringWidth
 import settings
-from google_sheets_reader import GoogleSheetsReader
+#from google_sheets_reader import GoogleSheetsReader
 from enum import Enum
 
 pdfmetrics.registerFont(TTFont(settings.font_reg_name, settings.font_reg_file))
@@ -83,12 +83,13 @@ class Participant:
         self.text = text
 
     def template_file(self):
-        if self.diplom_type == self.DiplomType.PRIZER:
+        return settings.letter_blank
+        '''if self.diplom_type == self.DiplomType.PRIZER:
             return settings.priz_blank
         elif self.diplom_type == self.DiplomType.POBED:
             return settings.pob_blank
         else:
-            raise ValueError('А что тут делает этот молодой человек?')
+            raise ValueError('А что тут делает этот молодой человек?')'''
 
     def new_file(self, number):
         return os.path.join(settings.output_directory, number.__str__() + ') ' + self.full_name + '.pdf')
@@ -115,7 +116,7 @@ class LettersCreator:
         output.write(output_stream)
         output_stream.close()
 
-    @staticmethod
+'''    @staticmethod
     def create_letters_from_table(table, sheet=0):
         all_records = GoogleSheetsReader.get_all_records(table, sheet)
         humans = []
@@ -127,4 +128,4 @@ class LettersCreator:
         letter_number = 1
         for human in humans:
             LettersCreator.create_letter(human, letter_number)
-            letter_number += 1
+            letter_number += 1'''
